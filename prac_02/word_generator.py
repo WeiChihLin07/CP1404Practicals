@@ -10,12 +10,13 @@ import random
 VOWELS = "aeiou"
 CONSONANTS = "bcdfghjklmnpqrstvwxyz"
 
-word_format = "ccvcvvc"
+word_format = "bcdfghjk"
 word = ""
-for kind in word_format:
-    if kind == "c":
+for char in word_format:
+    if char == "c":
         word += random.choice(CONSONANTS)
     else:
         word += random.choice(VOWELS)
 
 print(word)
+
