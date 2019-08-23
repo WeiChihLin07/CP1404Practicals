@@ -19,7 +19,7 @@ def password_check():
 
 def main():
     password = get_password(MINIMUM_LENGTH)
-    print_asterisks(password)
+    print('*' * len(password))
 
 
 def get_password(minimum_length):
@@ -28,10 +28,6 @@ def get_password(minimum_length):
         print("Password does not meet the length requirement.")
         password = input("Enter at least {} characters password: ".format(minimum_length))
     return password
-
-
-def print_asterisks(sequence):
-    print('*' * len(sequence))
 
 
 main()
