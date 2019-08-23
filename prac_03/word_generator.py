@@ -9,21 +9,7 @@ import random
 
 VOWELS = "aeiou"
 CONSONANTS = "bcdfghjklmnpqrstvwxyz"
-
-
-# def word_generator():
-#     word_format = "ccvcvvc"
-#     word = ""
-#     for kind in word_format:
-#         if kind == "c":
-#             word += random.choice(CONSONANTS)
-#         else:
-#             word += random.choice(VOWELS)
-#
-#     print(word)
-
-
-# word_generator()
+SPECIAL_CHARACTERS = "!@#$%^&*()_-=+`~,./'[]<>?{}|\\"
 
 """Refactor word_generator to use function"""
 
@@ -37,27 +23,34 @@ def main():
 
     word = ""
     for kind in word_format:
-        if kind == "c":
-            word += random.choice(CONSONANTS)
-        else:
+        if kind in VOWELS:
             word += random.choice(VOWELS)
+        else:
+            word += random.choice(CONSONANTS)
+
     print(word)
 
 
 def is_valid_format(word_format):
     """Determine if the provided word format is valid."""
-    if True:
+    count_vowel = 0
+    count_consonant = 0
+    count_digit = 0
+    count_special = 0
+    for char in word_format:
+        if char in VOWELS:
+            count_vowel += 1
+        elif char in CONSONANTS:
+            count_consonant += 1
+        elif char.isdigit():
+            count_digit += 1
+        elif char in SPECIAL_CHARACTERS:
+            count_special += 1
+
+    if count_vowel == 0 or count_consonant == 0 or count_digit >= 1 or count_special >= 1:
         return False
     else:
         return True
 
 
 main()
-
-
-
-
-
-
-
-
