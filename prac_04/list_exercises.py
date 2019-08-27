@@ -16,5 +16,15 @@ def print_number(numbers):
     print("The largest number is {}".format(max(numbers)))
     print("The average of the number is {}".format(sum(numbers) / len(numbers)))
 
+    # Security_checker
+    usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface',
+                 'BaseStdIn', 'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer',
+                 'bob']
+    user = input("Username: ")
+    if user in usernames:
+        print("Access granted")
+    else:
+        print("Access denied")
+
 
 main()
