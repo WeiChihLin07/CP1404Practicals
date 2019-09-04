@@ -14,7 +14,7 @@ def main():
         print("Invalid!")
         number_of_picks = int(input("How many quick picks? "))
 
-    for number in range(number_of_picks):
+    for i in range(number_of_picks):
         quick_pick = []
         for pick_row in range(NUMBERS_IN_ROW):
             generate_number = random.randint(MIN_NUMBER, MAX_NUMBER)
