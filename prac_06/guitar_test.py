@@ -2,7 +2,6 @@
 CP1404/CP5632 Practical - Guitar client code.
 """
 from prac_06.guitar import Guitar
-
 CURRENT_YEAR = 2019
 
 
