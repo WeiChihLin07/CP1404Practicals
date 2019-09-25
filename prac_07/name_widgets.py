@@ -4,6 +4,7 @@ Create an app that has a list of names (strings) and displays each one as a sepa
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import StringProperty
+from kivy.uix.label import Label
 
 
 class NameWidgetsApp(App):
@@ -25,7 +26,8 @@ class NameWidgetsApp(App):
     def create_labels(self):
         """Create Labels from list entries and add them to the GUI."""
         for name in self.name_to_label:
-            self.root.ids.entries_box(name)
+            temp_label = Label(text=name)
+            self.root.ids.entries_box.add_widget(temp_label)
 
 
 NameWidgetsApp().run()
