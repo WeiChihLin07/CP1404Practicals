@@ -30,15 +30,17 @@ class MilesConverterApp(App):
         print("handle_increment")
         miles = self.convert_to_number(text) + change
         self.root.ids.input_miles.text = str(miles)
-        # Since the InputText.text has changed, its on_text event will fire and handle_calculate will be called
+        # Because the InputText.text has changed, its on_text event will execute and handle_calculate will be called
 
     def update_result(self, miles):
+        """Update output result from miles to kms."""
         print("update_result")
         self.output_km = str(miles * MILES_TO_KM)
 
     @staticmethod
     def convert_to_number(text):
-        """Convert text to float or 0.0 if invalid."""
+        """A static method which converts text to float or return 0.0 if text is invalid."""
+        print("convert_to_number")
         try:
             value = float(text)
             return value
