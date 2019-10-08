@@ -35,7 +35,7 @@ class MilesConverterApp(App):
     def update_result(self, miles):
         """Update output result from miles to kms."""
         print("update_result")
-        self.output_km = str(miles * MILES_TO_KM)
+        self.output_km = "{:.2f}".format(miles * MILES_TO_KM)
 
     @staticmethod
     def convert_to_number(text):
