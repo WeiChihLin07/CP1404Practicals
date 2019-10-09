@@ -7,7 +7,7 @@ class SilverServiceTaxi(Taxi):
     """Represent a SilverServiceTaxi that includes flagfall as class variable."""
     flagfall = 4.5
 
-    def __int__(self, name, fuel, fanciness):
+    def __init__(self, name, fuel, fanciness):
         """Initialise a SilverServiceTaxi that includes fanciness."""
         super().__init__(name, fuel)
         self.fanciness = fanciness

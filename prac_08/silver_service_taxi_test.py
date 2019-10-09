@@ -8,7 +8,7 @@ def main():
     taxi = SilverServiceTaxi("Townsville", 100, 2)
     taxi.drive(18)
     print(taxi)
-    print(taxi.calculate_fare())
+    print("${:.2f}".format(taxi.calculate_fare()))
 
 
 main()
