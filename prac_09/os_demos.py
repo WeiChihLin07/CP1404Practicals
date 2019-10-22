@@ -19,7 +19,10 @@ def main():
     # Make a new directory
     # The next time you run this, it will crash if the directory exists
     # TODO: Use exception handling to avoid the crash (just pass)
-    os.mkdir('temp')
+    try:
+        os.mkdir('temp')
+    except FileExistsError:
+        pass
 
     # Loop through each file in the (current) directory
     for filename in os.listdir('.'):
@@ -54,6 +57,10 @@ def demo_walk():
         print("(Current working directory is: {})".format(os.getcwd()))
 
         # TODO: add a loop to rename the files
+        for filename in filenames:
+            full_name = os.path.join(directory_name, filename)
+            new_name = os.path.join(directory_name, get_fixed_filename(filename))
+            os.rename(full_name, new_name)
 
 
 main()
