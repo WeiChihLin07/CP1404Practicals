@@ -17,24 +17,25 @@ def main():
         print("(Current working directory is: {})".format(os.getcwd()))
 
         for filename in filenames:
-            new_name = get_fixed_filename(filename)
-            print("Renaming {} to {}".format(filename, new_name))
-
-            full_name = os.path.join(directory_name, filename)
-            new_name = os.path.join(directory_name, new_name)
-            os.rename(full_name, new_name)
+            new_filename = os.path.join(directory_name, filename)
+            fixed_filename = get_fixed_filename(new_filename)
+            os.rename(new_filename, fixed_filename)
 
 
 def get_fixed_filename(filename):
     """Return a 'fixed version of filename."""
-    new_name = filename.replace("", "_").replace(".TXT", ",txt")
-    if "_" not in new_name:
-        new_name_letters = list(new_name)
-        for i, letter in enumerate(new_name_letters):
-            if i > 0 and letter.isupper() and new_name_letters[i - 1].isalpha():
-                new_name_letters.insert(i, "_")
-        new_name = "".join(new_name_letters)
-    return new_name
+    new_name = filename.replace("", "_").replace(".TXT", ".txt")
+    old_char = ''
+    new_filename = ''
+    for character in new_name:
+        if old_char.islower():
+            if character.isupper():
+                new_filename += '_'
+        if old_char == '_':
+            character = character.upper()
+        new_filename += character
+        old_char = character
+    return new_filename
 
 
 main()
