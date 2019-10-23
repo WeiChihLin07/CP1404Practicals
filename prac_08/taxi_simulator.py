@@ -14,6 +14,7 @@ MENU = "q)uit, c)hoose taxi, d)rive"
 def main():
     """taxi_simulator to use Taxi and SilverServiceTaxi classes."""
     total_bill = 0
+    current_taxi = None
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
     print("Let's drive!")
     print(MENU)
@@ -25,12 +26,13 @@ def main():
             taxi_choice = get_valid_taxi_choice(taxis)
             current_taxi = taxis[taxi_choice]
         elif choice == "d":
-            current_taxi.start_fare()
-            distance_to_drive = get_valid_distance_to_drive()
-            current_taxi.drive(distance_to_drive)
-            trip_cost = current_taxi.get_fare()
-            print("Your {} trip cost you ${:.2f}".format(current_taxi.name, trip_cost))
-            total_bill += trip_cost
+            if current_taxi is not None:
+                current_taxi.start_fare()
+                distance_to_drive = get_valid_distance_to_drive()
+                current_taxi.drive(distance_to_drive)
+                trip_cost = current_taxi.get_fare()
+                print("Your {} trip cost you ${:.2f}".format(current_taxi.name, trip_cost))
+                total_bill += trip_cost
         else:
             print("Invalid choice")
         print("Bill to date: ${:.2f}".format(total_bill))
