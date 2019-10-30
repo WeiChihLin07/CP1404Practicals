@@ -52,11 +52,12 @@ def run_tests():
     assert test_car.fuel == 0
 
 
-run_tests()
+# run_tests()
 
 # TODO: 3. Uncomment the following line and run the doctests
 #  (PyCharm may see your >>> doctest comments and run doctests anyway.)
 doctest.testmod()
+
 
 # TODO: 4. Fix the failing is_long_word function
 # (don't change the tests, change the function!)
@@ -70,3 +71,17 @@ doctest.testmod()
 # and one more you decide (one that is valid!)
 # test this and watch the tests fail
 # then write the body of the function so that the tests pass
+
+def phrase_to_sentence(phrase):
+    assert phrase_to_sentence('hello')
+    assert phrase_to_sentence('It is an ex parrot.')
+    assert phrase_to_sentence('It is CP1404.')
+    sentence = phrase.capitalize()
+    if sentence[-1] != '.':
+        sentence += '.'
+    return sentence
+
+
+run_tests()
+
+# doctest.testmod()
