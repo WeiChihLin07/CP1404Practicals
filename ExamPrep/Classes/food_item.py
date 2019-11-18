@@ -12,7 +12,8 @@ class FoodItem:
         self.gluten_free_status = gluten_free_status
 
     def __str__(self):
-        return "Name: {} Calories: {} Gluten-Free Status: {}".format(self.name, self.calories, self.gluten_free_status)
+        return "Name: {} Calories: {} Gluten-Free Status: {}".format(self.name, self.calories,
+                                                                     "No" if self.gluten_free_status else "Yes")
 
     def is_healthy(self):
         if self.calories > 130:

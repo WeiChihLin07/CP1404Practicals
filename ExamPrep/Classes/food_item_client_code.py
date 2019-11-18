@@ -4,16 +4,14 @@ creates a food object for each item and adds it to a list prints all of the "hea
 using a list comprehension
 """
 
-# ToDo
-
 from ExamPrep.Classes.food_item import FoodItem
 
-name = input("Name: ")
-while name != "":
+item_name = input("Item Name: ")
+food_items = []
+while item_name != "":
     calories = int(input("Calories: "))
-    gluten_free_status = input("True or False: ").title()
-    name = input("Name: ")
-    food_items = []
-    food_items.append(FoodItem(name, calories, gluten_free_status))
-    print(FoodItem for FoodItem in food_items if FoodItem.is_healthy())
-print("Bye")
+    gluten_free = input("Gluten_Free: Yes or No: ").title()
+    food_items.append(FoodItem(item_name, calories, gluten_free))
+    item_name = input("Item Name: ")
+healthy_items = [food_item.name for food_item in food_items if food_item.is_healthy()]
+print(healthy_items)
