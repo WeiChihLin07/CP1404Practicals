@@ -3,3 +3,9 @@ perform some operation and may return a value.
 
 The main difference is that methods are functions tied to a particular object.
 
+Functions should:
+1) Do one thing also known as SRP (Single Responsible Principal)
+2) Be Readable
+3) Be Reusable
+4) Be Complete
+5) Not be too long
