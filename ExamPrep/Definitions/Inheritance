@@ -1,0 +1,7 @@
+Inheritance gives us a way to organise code
+1) Specialise : a subclass can inherit code from its superclass,
+                but modify anything that is particular to that subclass.
+
+2) Override: change super class behaviour to be specific to a subclass
+
+3) Reuse: use code from super classes to get that behaviour in our class.
