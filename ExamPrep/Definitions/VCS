@@ -3,7 +3,9 @@ Version Control System (VCS) allows you to :
 2) Compare changes over time
 3) See who modified what
 
-
+GitHub is a web hosting service for project that use Git.
+Git and GitHub are different things.
+You can use Git without using GitHub.
 
 Why Git?
 1) Not centralised
