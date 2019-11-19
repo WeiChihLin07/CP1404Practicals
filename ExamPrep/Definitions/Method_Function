@@ -1,0 +1,5 @@
+Method and function are both "small programs" that have parameters,
+perform some operation and may return a value.
+
+The main difference is that methods are functions tied to a particular object.
+
