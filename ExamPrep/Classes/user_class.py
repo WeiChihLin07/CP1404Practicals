@@ -14,7 +14,17 @@ class User:
         self.score = score
 
     def __str__(self):
-        return "{}, {} points {} tacos left".format(self.name, self.score, self.number_of_tacos)
+        return "Name: {:4} {:2} points {:2} tacos left".format(self.name, self.score, self.number_of_tacos)
 
-    # def point(self, score):
-# TODO:
+    def point(self, other):
+        self.score += 2
+        self.number_of_tacos -= 1
+        other.number_of_tacos += 1
+        return other
+
+
+ben = User('Ben')
+bill = User('Bill')
+ben.point(bill)
+print(ben)
+print(bill)
