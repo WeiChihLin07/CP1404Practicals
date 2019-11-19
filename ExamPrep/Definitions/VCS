@@ -1,0 +1,17 @@
+Version Control System (VCS) allows you to :
+1) Revert files to previous state
+2) Compare changes over time
+3) See who modified what
+
+
+
+Why Git?
+1) Not centralised
+2) No single point of failure or bottleneck
+
+
+Git workflow:
+1) You modify files in your working directory
+2) You stage the files by adding them to your staging area
+3) You do a commit,which takes the files as they are in the staging area and stores that snapshot
+   permanently to your Git directory.
