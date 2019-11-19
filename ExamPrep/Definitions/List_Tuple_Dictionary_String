@@ -1,0 +1,23 @@
+Lists:
+      A list is an ordered sequence of items.
+      Lists are mutable, their values can be changed.
+      Lists must be named in plural terms.
+      Lists can contain a mixture of any Python object.
+
+
+Strings:
+        Strings are immutable.
+        String can only hold characters.
+
+
+Set:
+    A set is an unordered sequence of items
+
+
+Tuple:
+      A tuple contains both index and element.
+      tuple are like immutable lists.
+
+
+Dictionary:
+            Dictionary's key must be immutable.
